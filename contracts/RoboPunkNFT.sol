@@ -33,7 +33,7 @@ contract RoboPunkNFT is ERC721, Ownable {
 
     function tokenURI(uint256 tokenId_) public view override returns (string memory) {
         require(_exists(tokenId_), 'Token does not exist!');
-        return string(abi.encodePacked(baseTokenUri, String.toString(tokenId_), ".json"));
+        return string(abi.encodePacked(baseTokenUri, Strings.toString(tokenId_), ".json"));
     }
 
     function withdraw() external onlyOwner {
